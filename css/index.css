@@ -1,0 +1,273 @@
+@charset "utf-8";
+/* CSS Document */
+* {
+    margin: 0px;
+    padding: 0px;
+}
+html,body {
+    height: 100%;
+}
+@font-face {
+    font-family: "Webfont";
+    src:url("../img/websymbols.woff") format("woff"),
+    url("../img/websymbols.ttf") format("truetype");
+}
+body {
+    font-family: Arial 微软雅黑;
+    font-size: 14px;
+    color: #F6F930;
+    line-height: 30px;
+    background-color: #000;
+    background-image: url(../img/131501.jpg);
+    background-repeat: no-repeat;
+    background-position: center -100px;
+}
+#box_line{
+    width: 680px;
+    height: 100%;
+    border-left: 1px solid #252507;
+    border-right: 1px solid #252507;
+    margin: 0px auto;
+}
+#left_line {
+    width: 340px;
+    height: 100%;
+    border-right: 1px solid #66613E;
+}
+
+#left_nav {
+    position: absolute;
+    width: 400px;
+    height: auto;
+    overflow: hidden;
+    margin-top: 30px;
+    margin-left: 10px;
+    left: 10px;
+    top:65px;
+
+}
+#left_nav li{
+    position: relative;
+    width: 500px;
+    height: 100px;
+    overflow: hidden;
+    margin-bottom: 10px;
+    background-color: rgba(123, 123, 123, 0.3);
+    color: #F6F930;
+    list-style-type: none;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    transition: all 0.8s ease;
+}
+.border01 {
+    position: absolute;
+    width: 10px;
+    height: 100px;
+    overflow: hidden;
+    left: 0px;
+    top: 0px;
+    background-color: #F90;
+    opacity: 0;
+    transition: all 0.8s ease;
+}
+.text{
+    width: 300px;
+    height: 70px;
+    margin-top: 24px;
+    float: left;
+    -webkit-animation: 1s 0.5s ease both;
+    -moz-animation: 1s 0.5s ease both;
+}
+.text h2,.text a{
+    text-shadow: 1px 2px 4px #999;
+    font-size: 30px;
+    color: #ffffff;
+    text-decoration: none;
+    transition: all 0.8s ease;
+}
+.text h3{
+    font-family: Verdana;
+    font-size: 14px;
+    color: #666;
+    transition: all 0.8s ease;
+}
+.icon {
+    width: 90px;
+    height: 90px;
+    margin: 5px 20px 0px 20px;
+    font-family: "Webfont";
+    float: left;
+    font-size: 30px;
+    line-height: 90px;
+    text-align: center;
+    text-shadow:0 0 3px #CCCCCC;
+    transition: all 0.8s ease;
+}
+#left_nav li:hover {
+    background-color: #000;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+#left_nav li:hover .border01 {
+    opacity: 1;
+    left: 390px;
+}
+#left_nav li:hover h2,#box li:hover a{
+    color: #F90;
+    font-size: 18px;
+    text-shadow: 1px 2px 4px #F90;
+}
+#left_nav li:hover .text h3{
+    color: #F90;
+    font-size: 18px;
+    margin-top: 10px;
+}
+#left_nav li:hover .icon{
+    color: #F90;
+    font-size: 50px;
+}
+#left_nav li:hover .text{
+    -webkit-animation-name: mymove;
+    -moz-animation-name: mymove;
+}
+@-webkit-keyframes mymove{
+    0%,100%{-webkit-transform: translate(0px,0px);}
+    20%,60%{-webkit-transform: translate(-10px,0px);}
+    40%,80%{-webkit-transform:translate(10px,0px);}
+}
+@-moz-keyframes mymove{
+    0%,100%{-moz-transform:translate(0px,0px);}
+    20%,60%{-moz-transform:translate(-10px,0px);}
+    40%,80%{-moz-transform:translate(10px,0px);}
+}
+
+#fish {
+    position: absolute;
+    width: 32px;
+    height: 25px;
+    top: 95px;
+    left: 20px;
+    margin-left: -16px;
+    margin-top: -12.5px;
+    z-index: 1;
+    /*绑定两个关键帧动画*/
+    -moz-animation-name: mymove_suspension,myrotate;
+    -webkit-animation-name: mymove_suspension,myrotate;
+    /*设置关键帧动画无限循环*/
+    -moz-animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+    /*设置关键帧动画播放时间*/
+    -moz-animation-duration: 15s;
+    -webkit-animation-duration: 15s;
+}
+/*创建关键帧动画mymove*/
+@-moz-keyframes mymove_suspension {
+    0% {top:95px; left:20px;}
+    25% {top:95px; left:420px;}
+    50% {top: 635px; left:420px;}
+    75% {top: 635px; left:20px;}
+    100% {top:95px; left:20px;}
+}
+@-webkit-keyframes mymove_suspension {
+    0% {top:95px; left:20px;}
+    25% {top:95px; left:420px;}
+    50% {top: 635px; left:420px;}
+    75% {top: 635px; left:20px;}
+    100% {top:95px; left:20px;}
+}
+/*创建关键帧动画myrotate*/
+@-moz-keyframes myrotate {
+    50% {-moz-transform: rotate(180deg);}
+    100% {-moz-transform: rotate(360deg);}
+}
+@-webkit-keyframes myrotate {
+    50% {-webkit-transform: rotate(180deg);}
+    100% {-webkit-transform: rotate(360deg);}
+}
+#card {
+    position: absolute;
+    top: 150px;
+    left: 800px;
+    padding-top: 40px;
+    height: auto;
+    overflow: hidden;
+    text-align: center;
+}
+#card li {
+    display: block;
+    position: relative;
+    list-style-type: none;
+    width: 130px;
+    height: 350px;
+    background-image: url(../img/132608.jpg);
+    border: 2px solid #E8F4F7;
+    padding: 25px 9px;
+    margin-bottom: 60px;
+    float: left;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px #000;
+    transition: all 1s ease-in-out;
+}
+#card h1 {
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 40px;
+}
+#card p {
+    font-weight: bold;
+    margin-top: 10px;
+    font-size: 14px;
+    text-align: left;
+}
+#card-1 {
+    z-index:1;
+    left:150px;
+    top:40px;
+    transform: rotate(-20deg);
+}
+#card-2 {
+    z-index:2;
+    left:70px;
+    top:10px;
+    transform: rotate(-10deg);
+}
+#card-3 {
+    z-index:3;
+}
+#card-4 {
+    z-index:2;
+    right:70px;
+    top:10px;
+    transform: rotate(10deg);
+}
+#card-5 {
+    z-index:1;
+    right:150px;
+    top:40px;
+    transform: rotate(20deg);
+}
+#card-1:hover {
+    cursor: pointer;
+    z-index: 4;
+    transform: scale(1.2) rotate(-18deg);
+}
+#card-2:hover {
+    cursor: pointer;
+    z-index: 4;
+    transform: scale(1.2) rotate(-8deg);
+}
+#card-3:hover {
+    cursor: pointer;
+    z-index: 4;
+    transform: scale(1.2) rotate(2deg);
+}
+#card-4:hover {
+    cursor: pointer;
+    z-index: 4;
+    transform: scale(1.2) rotate(12deg);
+}
+#card-5:hover {
+    cursor: pointer;
+    z-index: 4;
+    transform: scale(1.1) rotate(22deg);
+}
+
+
